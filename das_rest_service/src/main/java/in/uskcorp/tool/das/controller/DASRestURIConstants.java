@@ -14,6 +14,7 @@ public interface DASRestURIConstants {
 	String ROLES = "/roles";
 	String DISEASES = "/diseases";
 	String LOGIN = "/logins";
+	String REPORTINGS = "/reportings";
 	/**
 	 * OPERATIONS HERE
 	 */
