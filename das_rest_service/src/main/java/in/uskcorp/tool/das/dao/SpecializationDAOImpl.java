@@ -1,5 +1,7 @@
 package in.uskcorp.tool.das.dao;
 
+import java.util.List;
+
 import in.uskcorp.tool.das.dao.mapper.SpecializationRowMapper;
 import in.uskcorp.tool.das.dao.setter.SpecializationPreparedStatementSetter;
 import in.uskcorp.tool.das.domain.Specialization;
@@ -13,7 +15,7 @@ public class SpecializationDAOImpl extends SpecializationDAO {
 
 	@Override
 	protected RowMapper<Specialization> getRowMapper(Boolean b) {
-		return new SpecializationRowMapper();
+		return new SpecializationRowMapper(b);
 	}
 
 	@Override
@@ -46,5 +48,13 @@ public class SpecializationDAOImpl extends SpecializationDAO {
 			Specialization a, boolean isInsert) {
 		return new SpecializationPreparedStatementSetter(a, isInsert);
 	}
+
+	/*@Override
+	public List<Specialization> readById(Integer id) {
+		// TODO Auto-generated method stub
+		return getJdbcTemplate().query(SQLConstants.DISEASES_READ_BY_ID,
+				new Object[] { id }, new SpecializationRowMapper(false));
+
+	}*/
 
 }

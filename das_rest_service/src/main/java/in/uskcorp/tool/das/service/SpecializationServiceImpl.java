@@ -1,5 +1,7 @@
 package in.uskcorp.tool.das.service;
 
+import java.util.List;
+
 import in.uskcorp.tool.das.dao.APIDAO;
 import in.uskcorp.tool.das.dao.SpecializationDAO;
 import in.uskcorp.tool.das.domain.Specialization;
@@ -20,5 +22,10 @@ public class SpecializationServiceImpl extends SpecializationService {
 		// TODO Auto-generated method stub
 		return specializationDAO;
 	}
+
+	/*@Override
+	public List<Specialization> readById(Integer id) {
+		return specializationDAO.readById(id);
+	}*/
 
 }

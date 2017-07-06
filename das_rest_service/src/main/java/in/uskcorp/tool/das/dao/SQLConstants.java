@@ -40,4 +40,19 @@ public class SQLConstants {
 	public static final String APPOINTMENT_UPDATE = "UPDATE appointment set patient_name=?, diseases=?, appointment_date=?, doctor_id=?, hospital_id=?, phone_number=?, registration_id=?, dob=?,time=?, email=?,area=?, city=?, state=?, pincode=?, updated_date=?,description=? WHERE id = ?";
 	public static final String APPOINTMENT_DELETE = "UPDATE appointment set active_flag=1 WHERE id = ?";
 	public static final String HOSPITAL_READ_BY_ID = "select * from hospital where id=? and active_flag=0";
+
+	public static final String ROLE_SELECT = "SELECT * from roles where active_flag=0 ORDER by id desc";
+	public static final String ROLE_SELECT_BY_ID = "SELECT * FROM roles where id = ?";
+	public static final String ROLE_INSERT = "INSERT INTO roles(role_name, created_date, description) VALUES (?,?,?)";
+	public static final String ROLE_UPDATE = "UPDATE roles set role_name=?,updated_date=?, description=? WHERE id = ?";
+	public static final String ROLE_DELETE = "UPDATE roles set active_flag=1 WHERE id = ?";
+
+	public static final String DISEASES_SELECT = "SELECT d.*, department_name FROM department dp, diseases d where dp.id=d.department_id AND d.active_flag=0 ORDER BY d.id desc";
+	public static final String DISEASES_SELECT_BY_ID = "SELECT * FROM diseases where id = ?";
+	public static final String DISEASES_INSERT = "INSERT INTO diseases(name, department_id, created_date, description) VALUES (?,?,?,?)";
+	public static final String DISEASES_UPDATE = "UPDATE diseases set name=?,department_id=?,updated_date=?, description=? WHERE id = ?";
+	public static final String DISEASES_DELETE = "UPDATE diseases set active_flag=1 WHERE id = ?";
+	//public static final String DISEASES_READ_BY_ID = "select * from specialization where department_id=? and active_flag=0 ORDER BY `id` DESC";
+
+	public static final String LOGIN_CREDENTIALS = "select * from user where name= ? AND password = ?";
 }

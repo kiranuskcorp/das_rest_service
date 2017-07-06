@@ -11,6 +11,9 @@ public interface DASRestURIConstants {
 	String HOSPITALS = "/hospitals";
 	String DOCTORS = "/doctors";
 	String APPOINTMENTS = "/appointments";
+	String ROLES = "/roles";
+	String DISEASES = "/diseases";
+	String LOGIN = "/logins";
 	/**
 	 * OPERATIONS HERE
 	 */
@@ -20,6 +23,6 @@ public interface DASRestURIConstants {
 	String UPDATE = "/update";
 	String DELETE = "/delete";
 	String READ_BY_VALUES = "/readByValues";
-	String READ_ALL_BY_Id = "/readAllById";
+	String READ_ALL_BY_ID = "/readAllById";
 
 }

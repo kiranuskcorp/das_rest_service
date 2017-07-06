@@ -31,7 +31,7 @@ public class DoctorController extends APIController<Doctor> {
 		return doctorService;
 	}
 
-	@RequestMapping(value = DASRestURIConstants.READ_ALL_BY_Id, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = DASRestURIConstants.READ_ALL_BY_ID, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody ResponseEntity<List<Doctor>> readById(@RequestParam Integer id) {
 		try {
 			List<Doctor> doctor = doctorService.readById(id);
