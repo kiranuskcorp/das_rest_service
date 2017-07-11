@@ -27,5 +27,9 @@ public class SpecializationServiceImpl extends SpecializationService {
 	public List<Specialization> readById(Integer id) {
 		return specializationDAO.readById(id);
 	}
+	/*
+	 * @Override public List<Specialization> readById(Integer id) { return
+	 * specializationDAO.readById(id); }
+	 */
 
 }

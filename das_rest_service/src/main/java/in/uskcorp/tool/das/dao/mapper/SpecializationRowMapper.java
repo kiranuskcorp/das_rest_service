@@ -26,7 +26,9 @@ public class SpecializationRowMapper implements RowMapper<Specialization> {
 		specialization.setUpdatedDate(rs.getDate("updated_date"));
 		specialization.setDescription(rs.getString("description"));
 		specialization.setActiveFlag(rs.getInt("active_flag"));
-		if(isReadAll){
+
+		if (isReadAll) {
+			specialization.setId(rs.getInt("id"));
 			specialization.setDepartmentName(rs.getString("department_name"));
 		}
 		return specialization;

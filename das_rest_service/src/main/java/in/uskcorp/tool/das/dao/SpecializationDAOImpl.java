@@ -1,6 +1,8 @@
 package in.uskcorp.tool.das.dao;
 
 import in.uskcorp.tool.das.dao.mapper.DoctorRowMapper;
+import java.util.List;
+
 import in.uskcorp.tool.das.dao.mapper.SpecializationRowMapper;
 import in.uskcorp.tool.das.dao.setter.SpecializationPreparedStatementSetter;
 import in.uskcorp.tool.das.domain.Doctor;
@@ -55,4 +57,13 @@ public class SpecializationDAOImpl extends SpecializationDAO {
 		return getJdbcTemplate().query(SQLConstants.SPECIALIZATION_READ_BY_ID, new Object[] { id },
 				new SpecializationRowMapper(false));
 	}
+	/*
+	 * @Override public List<Specialization> readById(Integer id) { // TODO
+	 * Auto-generated method stub return
+	 * getJdbcTemplate().query(SQLConstants.DISEASES_READ_BY_ID, new Object[] {
+	 * id }, new SpecializationRowMapper(false));
+	 * 
+	 * }
+	 */
+
 }

@@ -30,6 +30,11 @@
 		</filter-class>
 	</filter>
 
+
+	<welcome-file-list>
+		<welcome-file>index</welcome-file>
+	</welcome-file-list>
+
 	<filter-mapping>
 		<filter-name>CORS</filter-name>
 		<url-pattern>*</url-pattern>
