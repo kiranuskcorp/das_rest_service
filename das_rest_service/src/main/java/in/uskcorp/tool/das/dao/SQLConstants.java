@@ -27,10 +27,10 @@ public class SQLConstants {
 	public static final String HOSPITAL_UPDATE = "UPDATE hospital set name=?, available_facilities=?, department_id=?, hospital_registration_number=?, hospital_establishment_date=?, start_time=?,end_time=?, contact=?, area=?, district=?,state=?,updated_date=?, description=? WHERE id = ?";
 	public static final String HOSPITAL_DELETE = "UPDATE hospital set active_flag=1 WHERE id = ?";
 
-	public static final String DOCTOR_SELECT = "SELECT d.*, d.name as department_name, sp.name as specializaiton_name, hp.name as hospital_name FROM doctor d, hospital hp, department dp, specialization sp where dp.id= d.department_id AND sp.id = d.specialization_id AND hp.id= d.hospital_id and d.active_flag=0";
+	public static final String DOCTOR_SELECT = "SELECT d.*, dp.department_name as department_name, sp.name as specializaiton_name, hp.name as hospital_name FROM doctor d, hospital hp, department dp, specialization sp where dp.id= d.department_id AND sp.id = d.specialization_id AND hp.id= d.hospital_id and d.active_flag=0 ";
 	public static final String DOCTOR_SELECT_BY_ID = "SELECT * FROM doctor where id = ?";
-	public static final String DOCTOR_INSERT = "INSERT INTO doctor(name, email, phone, alternate_phone, department_id, specialization_id, hospital_id, created_date, rating, experience, master_slot, description) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
-	public static final String DOCTOR_UPDATE = "UPDATE doctor set name=?, email=?, phone=?, alternate_phone=?, department_id=?, specialization_id=?, hospital_id=?, updated_date=?, rating=?, experience=?, master_slot=?,description=? WHERE id = ?";
+	public static final String DOCTOR_INSERT = "INSERT INTO doctor(name, email, phone, alternate_phone, date_of_birth, gender, department_id, specialization_id, hospital_id, created_date, rating, experience, master_slot, description) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	public static final String DOCTOR_UPDATE = "UPDATE doctor set name=?, email=?, phone=?, alternate_phone=?, date_of_birth= ?, gender=?, department_id=?, specialization_id=?, hospital_id=?, updated_date=?, rating=?, experience=?, master_slot=?,description=? WHERE id = ?";
 	public static final String DOCTOR_DELETE = "UPDATE doctor set active_flag=1 WHERE id = ?";
 	public static final String DOCTOR_READ_BY_ID = "select * from doctor where hospital_id=? and active_flag=0";
 

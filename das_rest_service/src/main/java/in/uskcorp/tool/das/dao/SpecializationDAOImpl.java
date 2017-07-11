@@ -1,8 +1,12 @@
 package in.uskcorp.tool.das.dao;
 
+import in.uskcorp.tool.das.dao.mapper.DoctorRowMapper;
 import in.uskcorp.tool.das.dao.mapper.SpecializationRowMapper;
 import in.uskcorp.tool.das.dao.setter.SpecializationPreparedStatementSetter;
+import in.uskcorp.tool.das.domain.Doctor;
 import in.uskcorp.tool.das.domain.Specialization;
+
+import java.util.List;
 
 import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.jdbc.core.RowMapper;
@@ -13,7 +17,7 @@ public class SpecializationDAOImpl extends SpecializationDAO {
 
 	@Override
 	protected RowMapper<Specialization> getRowMapper(Boolean b) {
-		return new SpecializationRowMapper();
+		return new SpecializationRowMapper(b);
 	}
 
 	@Override
@@ -42,9 +46,13 @@ public class SpecializationDAOImpl extends SpecializationDAO {
 	}
 
 	@Override
-	protected PreparedStatementSetter getPreparedStatementSetter(
-			Specialization a, boolean isInsert) {
+	protected PreparedStatementSetter getPreparedStatementSetter(Specialization a, boolean isInsert) {
 		return new SpecializationPreparedStatementSetter(a, isInsert);
 	}
 
+	@Override
+	public List<Specialization> readById(Integer id) {
+		return getJdbcTemplate().query(SQLConstants.SPECIALIZATION_READ_BY_ID, new Object[] { id },
+				new SpecializationRowMapper(false));
+	}
 }

@@ -12,6 +12,8 @@ public class Doctor {
 	private String departmentName;
 	private String specializationName;
 	private String hospitalName;
+	private Date dob;
+	private String gender;
 	private Date createdDate;
 	private Date updatedDate;
 	private float rating;
@@ -21,30 +23,6 @@ public class Doctor {
 	private int hospitalId;
 	private int departmentId;
 	private int specializationId;
-
-	public int getHospitalId() {
-		return hospitalId;
-	}
-
-	public void setHospitalId(int hospitalId) {
-		this.hospitalId = hospitalId;
-	}
-
-	public int getDepartmentId() {
-		return departmentId;
-	}
-
-	public void setDepartmentId(int departmentId) {
-		this.departmentId = departmentId;
-	}
-
-	public int getSpecializationId() {
-		return specializationId;
-	}
-
-	public void setSpecializationId(int specializationId) {
-		this.specializationId = specializationId;
-	}
 
 	public int getId() {
 		return id;
@@ -110,6 +88,22 @@ public class Doctor {
 		this.hospitalName = hospitalName;
 	}
 
+	public Date getDob() {
+		return dob;
+	}
+
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
 	public Date getCreatedDate() {
 		return createdDate;
 	}
@@ -156,6 +150,30 @@ public class Doctor {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public int getHospitalId() {
+		return hospitalId;
+	}
+
+	public void setHospitalId(int hospitalId) {
+		this.hospitalId = hospitalId;
+	}
+
+	public int getDepartmentId() {
+		return departmentId;
+	}
+
+	public void setDepartmentId(int departmentId) {
+		this.departmentId = departmentId;
+	}
+
+	public int getSpecializationId() {
+		return specializationId;
+	}
+
+	public void setSpecializationId(int specializationId) {
+		this.specializationId = specializationId;
 	}
 
 }
