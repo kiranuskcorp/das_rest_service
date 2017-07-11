@@ -1,10 +1,5 @@
 package in.uskcorp.tool.das.controller;
 
-import in.uskcorp.tool.das.domain.Appointment;
-import in.uskcorp.tool.das.domain.Hospital;
-import in.uskcorp.tool.das.service.APIService;
-import in.uskcorp.tool.das.service.HospitalService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
@@ -15,6 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import in.uskcorp.tool.das.domain.Hospital;
+import in.uskcorp.tool.das.service.APIService;
+import in.uskcorp.tool.das.service.HospitalService;
 
 @Controller
 @RequestMapping(DASRestURIConstants.HOSPITALS)

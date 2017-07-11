@@ -1,10 +1,14 @@
 package in.uskcorp.tool.das.dao;
 
+import in.uskcorp.tool.das.dao.mapper.DoctorRowMapper;
 import java.util.List;
 
 import in.uskcorp.tool.das.dao.mapper.SpecializationRowMapper;
 import in.uskcorp.tool.das.dao.setter.SpecializationPreparedStatementSetter;
+import in.uskcorp.tool.das.domain.Doctor;
 import in.uskcorp.tool.das.domain.Specialization;
+
+import java.util.List;
 
 import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.jdbc.core.RowMapper;
@@ -44,17 +48,22 @@ public class SpecializationDAOImpl extends SpecializationDAO {
 	}
 
 	@Override
-	protected PreparedStatementSetter getPreparedStatementSetter(
-			Specialization a, boolean isInsert) {
+	protected PreparedStatementSetter getPreparedStatementSetter(Specialization a, boolean isInsert) {
 		return new SpecializationPreparedStatementSetter(a, isInsert);
 	}
 
-	/*@Override
+	@Override
 	public List<Specialization> readById(Integer id) {
-		// TODO Auto-generated method stub
-		return getJdbcTemplate().query(SQLConstants.DISEASES_READ_BY_ID,
-				new Object[] { id }, new SpecializationRowMapper(false));
-
-	}*/
+		return getJdbcTemplate().query(SQLConstants.SPECIALIZATION_READ_BY_ID, new Object[] { id },
+				new SpecializationRowMapper(false));
+	}
+	/*
+	 * @Override public List<Specialization> readById(Integer id) { // TODO
+	 * Auto-generated method stub return
+	 * getJdbcTemplate().query(SQLConstants.DISEASES_READ_BY_ID, new Object[] {
+	 * id }, new SpecializationRowMapper(false));
+	 * 
+	 * }
+	 */
 
 }

@@ -27,16 +27,18 @@ public class DoctorPreparedStatementSetter implements PreparedStatementSetter {
 		ps.setString(2, doctor.getEmail());
 		ps.setString(3, doctor.getPhone());
 		ps.setString(4, doctor.getAlternatePhone());
-		ps.setString(5, doctor.getDepartmentName());
-		ps.setString(6, doctor.getSpecializationName());
-		ps.setString(7, doctor.getHospitalName());
-		ps.setDate(8, ResultSetUtil.converttoSQLDate(new Date()));
-		ps.setFloat(9, doctor.getRating());
-		ps.setInt(10, doctor.getExperience());
-		ps.setInt(11, doctor.getMasterSlot());
-		ps.setString(12, doctor.getDescription());
+		ps.setDate(5, ResultSetUtil.converttoSQLDate(doctor.getDob()));
+		ps.setString(6, doctor.getGender());
+		ps.setInt(7, doctor.getDepartmentId());
+		ps.setInt(8, doctor.getSpecializationId());
+		ps.setInt(9, doctor.getHospitalId());
+		ps.setDate(10, ResultSetUtil.converttoSQLDate(new Date()));
+		ps.setFloat(11, doctor.getRating());
+		ps.setInt(12, doctor.getExperience());
+		ps.setInt(13, doctor.getMasterSlot());
+		ps.setString(14, doctor.getDescription());
 		if (!isInsert) {
-			ps.setInt(13, doctor.getId());
+			ps.setInt(15, doctor.getId());
 		}
 	}
 }

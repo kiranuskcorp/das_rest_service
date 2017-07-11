@@ -22,7 +22,7 @@ public class HospitalPreparedStatementSetter implements PreparedStatementSetter 
 	@Override
 	public void setValues(PreparedStatement ps) throws SQLException {
 		ps.setString(1, hospital.getName());
-		ps.setString(2, hospital.getAvailableFacilities());
+		ps.setString(2, hospital.getAvailableFacilities().replace("[", "").replace("]", "").replace("\"", ""));
 		ps.setInt(3, hospital.getDepartmentId());
 		ps.setString(4, hospital.getHospitalRegistrationNumber());
 		ps.setDate(5, ResultSetUtil.converttoSQLDate(hospital.getHospitalEstablishmentDate()));

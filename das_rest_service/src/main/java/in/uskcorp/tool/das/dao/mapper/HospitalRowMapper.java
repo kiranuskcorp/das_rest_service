@@ -30,16 +30,13 @@ public class HospitalRowMapper implements RowMapper<Hospital> {
 		hospital.setStartTime(rs.getString("start_time"));
 		hospital.setEndTime(rs.getString("end_time"));
 		hospital.setDepartmentId(rs.getInt("department_id"));
-
 		hospital.setState(rs.getString("state"));
 		hospital.setCreatedDate(rs.getDate("created_date"));
 		hospital.setUpdatedDate(rs.getDate("updated_date"));
 		hospital.setDescription(rs.getString("description"));
 		if (isReadAll) {
-
 			hospital.setDepartmentName(rs.getString("department_name"));
 		}
 		return hospital;
 	}
-
 }

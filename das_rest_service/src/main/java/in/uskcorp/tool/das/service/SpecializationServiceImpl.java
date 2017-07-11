@@ -2,13 +2,13 @@ package in.uskcorp.tool.das.service;
 
 import java.util.List;
 
-import in.uskcorp.tool.das.dao.APIDAO;
-import in.uskcorp.tool.das.dao.SpecializationDAO;
-import in.uskcorp.tool.das.domain.Specialization;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+
+import in.uskcorp.tool.das.dao.APIDAO;
+import in.uskcorp.tool.das.dao.SpecializationDAO;
+import in.uskcorp.tool.das.domain.Specialization;
 
 @Service("specializationServiceImpl")
 public class SpecializationServiceImpl extends SpecializationService {
@@ -23,9 +23,13 @@ public class SpecializationServiceImpl extends SpecializationService {
 		return specializationDAO;
 	}
 
-	/*@Override
+	@Override
 	public List<Specialization> readById(Integer id) {
 		return specializationDAO.readById(id);
-	}*/
+	}
+	/*
+	 * @Override public List<Specialization> readById(Integer id) { return
+	 * specializationDAO.readById(id); }
+	 */
 
 }
