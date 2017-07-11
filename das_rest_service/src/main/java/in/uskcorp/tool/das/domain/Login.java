@@ -1,15 +1,23 @@
 package in.uskcorp.tool.das.domain;
 
-import java.util.List;
-
 public class Login {
 
 	private String username;
 	private String password;
-	//private List<Role> role;
+	private boolean isValid;
+
+	// private List<Role> role;
 
 	public String getUsername() {
 		return username;
+	}
+
+	public boolean isValid() {
+		return isValid;
+	}
+
+	public void setValid(boolean isValid) {
+		this.isValid = isValid;
 	}
 
 	public void setUsername(String username) {
@@ -24,12 +32,14 @@ public class Login {
 		this.password = password;
 	}
 
-	/*public List<Role> getRole() {
-		return role;
+	@Override
+	public String toString() {
+		return "Login [username=" + username + ", password=" + password + "]";
 	}
 
-	public void setRole(List<Role> role) {
-		this.role = role;
-	}
-*/
+	/*
+	 * public List<Role> getRole() { return role; }
+	 * 
+	 * public void setRole(List<Role> role) { this.role = role; }
+	 */
 }

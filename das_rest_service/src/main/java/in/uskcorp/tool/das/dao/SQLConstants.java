@@ -9,6 +9,7 @@ public class SQLConstants {
 	public static final String SPECIALIZATION_DELETE = "UPDATE specialization set active_flag=1 WHERE id = ?";
 	public static final String SPECIALIZATION_READ_BY_ID = "select * from specialization where department_id=? and active_flag=0";
 
+	
 	public static final String USER_SELECT = "SELECT * FROM user where active_flag=0 ORDER by id desc";
 	public static final String USER_INSERT = "INSERT INTO user(name, email,password, phone, alternate_phone, dob, gender, address, role, created_date, description) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 	public static final String USER_DELETE = "UPDATE user set active_flag=1 WHERE id = ?";
@@ -56,7 +57,7 @@ public class SQLConstants {
 	//public static final String DISEASES_READ_BY_ID = "select * from specialization where department_id=? and active_flag=0 ORDER BY `id` DESC";
 
 	public static final String LOGIN_CREDENTIALS = "select * from user where name= ? AND password = ?";
-
+	
 	public static final String REPORTING_All = "SELECT a.*,d.name as doctorName,h.name as hospitalName FROM appointment a,doctor d,hospital h where d.id=a.doctor_id and h.id = a.hospital_id and a.active_flag=0 ORDER by id desc";
 	public static final String REPORTING_BY_DOCTOR = "SELECT a.*,d.name as doctorName,h.name as hospitalName FROM appointment a,doctor d,hospital h";
 }

@@ -14,6 +14,9 @@ public class LoginRowMapper implements RowMapper<Login> {
 		Login login = new Login();
 		login.setUsername(rs.getString("name"));
 		login.setPassword(rs.getString("password"));
+		/*
+		 * if (login.isValid()) { login.setValid(rs.getBoolean("true")); }
+		 */
 		return login;
 	}
 

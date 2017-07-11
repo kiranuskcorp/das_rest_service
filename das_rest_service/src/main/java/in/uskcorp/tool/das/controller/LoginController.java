@@ -1,5 +1,8 @@
 package in.uskcorp.tool.das.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import in.uskcorp.tool.das.domain.Login;
 import in.uskcorp.tool.das.service.APIService;
 import in.uskcorp.tool.das.service.LoginService;
@@ -30,16 +33,21 @@ public class LoginController extends APIController<Login> {
 	}
 
 	@RequestMapping(value = DASRestURIConstants.READ_BY_VALUES, method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody ResponseEntity<String> readByValues(
+	public @ResponseBody ResponseEntity<List<Login>> readByValues(
 			@RequestBody Login loginDetails) {
 		try {
+			
 			Login login = loginService.readByValues(loginDetails.getUsername(),
 					loginDetails.getPassword());
-			return new ResponseEntity<String>(login.toString(), HttpStatus.OK);
+			List<Login> loginList = new ArrayList<Login>();
+			if(loginList != null)
+			loginList.add(login);
+			return new ResponseEntity<List<Login>>(loginList, HttpStatus.OK);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return new ResponseEntity<String>("Failed",
-					HttpStatus.SERVICE_UNAVAILABLE);
+			List<Login> loginList = new ArrayList<Login>();
+			return new ResponseEntity<List<Login>>(loginList,
+					HttpStatus.BAD_REQUEST);
 
 		}
 	}
