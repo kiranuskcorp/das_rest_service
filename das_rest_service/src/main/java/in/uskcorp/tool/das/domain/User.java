@@ -3,6 +3,7 @@ package in.uskcorp.tool.das.domain;
 import java.util.Date;
 
 public class User {
+
 	private int id;
 	private String name;
 	private String email;
@@ -209,6 +210,42 @@ public class User {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", email=" + email
+				+ ", password=" + password + ", phone=" + phone
+				+ ", alternatePhone=" + alternatePhone + ", dob=" + dob
+				+ ", gender=" + gender + ", address=" + address + ", roleId="
+				+ roleId + ", roleName=" + roleName + ", departmentName="
+				+ departmentName + ", specializationName=" + specializationName
+				+ ", hospitalName=" + hospitalName + ", hospitalId="
+				+ hospitalId + ", departmentId=" + departmentId
+				+ ", specializationId=" + specializationId + ", rating="
+				+ rating + ", experience=" + experience + ", masterSlot="
+				+ masterSlot + ", createdDate=" + createdDate
+				+ ", updatedDate=" + updatedDate + ", description="
+				+ description + ", getId()=" + getId() + ", getName()="
+				+ getName() + ", getEmail()=" + getEmail() + ", getPassword()="
+				+ getPassword() + ", getPhone()=" + getPhone()
+				+ ", getAlternatePhone()=" + getAlternatePhone()
+				+ ", getDob()=" + getDob() + ", getGender()=" + getGender()
+				+ ", getAddress()=" + getAddress() + ", getRoleId()="
+				+ getRoleId() + ", getRoleName()=" + getRoleName()
+				+ ", getDepartmentName()=" + getDepartmentName()
+				+ ", getSpecializationName()=" + getSpecializationName()
+				+ ", getHospitalName()=" + getHospitalName()
+				+ ", getHospitalId()=" + getHospitalId()
+				+ ", getDepartmentId()=" + getDepartmentId()
+				+ ", getSpecializationId()=" + getSpecializationId()
+				+ ", getRating()=" + getRating() + ", getExperience()="
+				+ getExperience() + ", getMasterSlot()=" + getMasterSlot()
+				+ ", getCreatedDate()=" + getCreatedDate()
+				+ ", getUpdatedDate()=" + getUpdatedDate()
+				+ ", getDescription()=" + getDescription() + ", getClass()="
+				+ getClass() + ", hashCode()=" + hashCode() + ", toString()="
+				+ super.toString() + "]";
 	}
 
 }

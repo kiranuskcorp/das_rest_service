@@ -48,9 +48,8 @@ public class UserDaoImpl extends UserDAO {
 	}
 
 	@Override
-	public User createUser(User user) {
-		return (User) getJdbcTemplate().query(SQLConstants.USER_INSERT,
-				new UserRowMapper());
+	public String createUser(User user) {
+		return SQLConstants.USER_INSERT;
 	}
 
 }

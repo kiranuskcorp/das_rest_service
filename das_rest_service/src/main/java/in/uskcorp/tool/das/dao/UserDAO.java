@@ -4,6 +4,6 @@ import in.uskcorp.tool.das.domain.User;
 
 public abstract class UserDAO extends APIDAO<User> {
 
-	public abstract User createUser(User user);
+	public abstract String createUser(User user);
 
 }
