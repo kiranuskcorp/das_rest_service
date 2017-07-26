@@ -25,18 +25,23 @@ public class HospitalRowMapper implements RowMapper<Hospital> {
 		hospital.setContact(rs.getString("contact"));
 		hospital.setDistrict(rs.getString("district"));
 		hospital.setAvailableFacilities(rs.getString("available_facilities"));
-		hospital.setHospitalEstablishmentDate(rs.getDate("hospital_establishment_date"));
-		hospital.setHospitalRegistrationNumber(rs.getString("hospital_registration_number"));
+		hospital.setHospitalEstablishmentDate(rs
+				.getDate("hospital_establishment_date"));
+		hospital.setHospitalRegistrationNumber(rs
+				.getString("hospital_registration_number"));
 		hospital.setStartTime(rs.getString("start_time"));
 		hospital.setEndTime(rs.getString("end_time"));
-		hospital.setDepartmentId(rs.getInt("department_id"));
+		// System.out.println("DepName:: " + rs.getString("department_id"));
+		hospital.setDepartmentId(rs.getString("department_id"));
 		hospital.setState(rs.getString("state"));
 		hospital.setCreatedDate(rs.getDate("created_date"));
 		hospital.setUpdatedDate(rs.getDate("updated_date"));
 		hospital.setDescription(rs.getString("description"));
 		if (isReadAll) {
-			hospital.setDepartmentName(rs.getString("department_name"));
+			hospital.setDepartmentName(rs.getString("GROUP_CONCAT(dp.department_name)"));
+			// System.out.println(rs.getString("department_name"));
 		}
 		return hospital;
 	}
+	
 }

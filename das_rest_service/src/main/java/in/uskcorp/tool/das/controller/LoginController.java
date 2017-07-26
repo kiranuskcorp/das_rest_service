@@ -1,18 +1,17 @@
 package in.uskcorp.tool.das.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import in.uskcorp.tool.das.domain.Login;
 import in.uskcorp.tool.das.service.APIService;
 import in.uskcorp.tool.das.service.LoginService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,19 +35,16 @@ public class LoginController extends APIController<Login> {
 	public @ResponseBody ResponseEntity<List<Login>> readByValues(
 			@RequestBody Login loginDetails) {
 		try {
-			
 			Login login = loginService.readByValues(loginDetails.getUsername(),
 					loginDetails.getPassword());
 			List<Login> loginList = new ArrayList<Login>();
-			if(loginList != null)
 			loginList.add(login);
 			return new ResponseEntity<List<Login>>(loginList, HttpStatus.OK);
 		} catch (Exception e) {
 			e.printStackTrace();
 			List<Login> loginList = new ArrayList<Login>();
 			return new ResponseEntity<List<Login>>(loginList,
-					HttpStatus.BAD_REQUEST);
-
+					HttpStatus.SERVICE_UNAVAILABLE);
 		}
 	}
 }

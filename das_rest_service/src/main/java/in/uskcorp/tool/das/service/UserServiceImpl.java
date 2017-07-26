@@ -1,4 +1,4 @@
-package  in.uskcorp.tool.das.service;
+package in.uskcorp.tool.das.service;
 
 import in.uskcorp.tool.das.dao.APIDAO;
 import in.uskcorp.tool.das.dao.UserDAO;
@@ -19,4 +19,8 @@ public class UserServiceImpl extends UserService {
 		return userDAO;
 	}
 
+	@Override
+	public int checkEmailExists(String email) {
+		return userDAO.checkEmailExists(email);
+	}
 }

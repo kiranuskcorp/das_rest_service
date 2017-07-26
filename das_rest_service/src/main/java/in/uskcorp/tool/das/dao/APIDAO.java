@@ -1,5 +1,7 @@
 package in.uskcorp.tool.das.dao;
 
+import in.uskcorp.tool.das.domain.Login;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;

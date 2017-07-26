@@ -24,12 +24,13 @@ public class DoctorRowMapper implements RowMapper<Doctor> {
 		doctor.setPhone(rs.getString("phone"));
 		doctor.setAlternatePhone(rs.getString("alternate_phone"));
 		doctor.setDob(rs.getDate("date_of_birth"));
+		doctor.setAddress(rs.getString("address"));
 		doctor.setGender(rs.getString("gender"));
 		doctor.setCreatedDate(rs.getDate("created_date"));
 		doctor.setUpdatedDate(rs.getDate("updated_date"));
 		doctor.setRating(rs.getFloat("rating"));
 		doctor.setExperience(rs.getInt("experience"));
-		doctor.setMasterSlot(rs.getInt("master_slot"));
+		doctor.setMasterSlot(rs.getString("master_slot"));
 		doctor.setDescription(rs.getString("description"));
 		doctor.setSpecializationId(rs.getInt("specialization_id"));
 		doctor.setHospitalId(rs.getInt("hospital_id"));

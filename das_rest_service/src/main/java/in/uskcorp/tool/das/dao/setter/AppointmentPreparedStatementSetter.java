@@ -19,11 +19,16 @@ public class AppointmentPreparedStatementSetter implements
 		this.isInsert = isInsert;
 	}
 
+	/*
+	 * patient_name, diseases, appointment_date, doctor_id, hospital_id,
+	 * phone_number, registration_id, dob, time, email, area, city, state,
+	 * pincode, created_date, description
+	 */
 	@Override
 	public void setValues(PreparedStatement arg0) throws SQLException {
 
 		arg0.setString(1, appointment.getPatientName());
-		arg0.setString(2, appointment.getDiseases());
+		arg0.setInt(2, appointment.getDiseasesId());
 		arg0.setDate(3, ResultSetUtil.converttoSQLDate(appointment
 				.getAppointmentDate()));
 		arg0.setInt(4, appointment.getDoctorId());
@@ -39,6 +44,9 @@ public class AppointmentPreparedStatementSetter implements
 		arg0.setInt(14, appointment.getPincode());
 		arg0.setDate(15, ResultSetUtil.converttoSQLDate(new Date()));
 		arg0.setString(16, appointment.getDescription());
+		System.out.println(ResultSetUtil.converttoSQLDate(appointment
+				.getAppointmentDate()));
+		System.out.println("Area:  "+appointment.getArea());
 		if (!isInsert) {
 			arg0.setInt(17, appointment.getId());
 		}

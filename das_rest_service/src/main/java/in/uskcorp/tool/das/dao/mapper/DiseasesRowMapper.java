@@ -1,10 +1,9 @@
 package in.uskcorp.tool.das.dao.mapper;
 
+import in.uskcorp.tool.das.domain.Diseases;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import in.uskcorp.tool.das.domain.Diseases;
-import in.uskcorp.tool.das.domain.Specialization;
 
 import org.springframework.jdbc.core.RowMapper;
 
@@ -19,7 +18,7 @@ public class DiseasesRowMapper implements RowMapper<Diseases> {
 	@Override
 	public Diseases mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Diseases diseases = new Diseases();
-		
+
 		diseases.setName(rs.getString("name"));
 		diseases.setDepartmentId(rs.getInt("department_id"));
 		diseases.setDepartmentName(rs.getString("department_name"));
@@ -28,7 +27,7 @@ public class DiseasesRowMapper implements RowMapper<Diseases> {
 		diseases.setCreatedDate(rs.getDate("created_date"));
 		diseases.setUpdatedDate(rs.getDate("updated_date"));
 		diseases.setDescription(rs.getString("description"));
-		if(isReadAll){
+		if (isReadAll) {
 			diseases.setId(rs.getInt("id"));
 		}
 		return diseases;

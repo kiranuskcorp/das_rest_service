@@ -53,8 +53,14 @@ public class LoginDAOImpl extends LoginDAO {
 
 	@Override
 	public Login readByValues(String username, String password) {
-		return getJdbcTemplate().queryForObject(SQLConstants.LOGIN_CREDENTIALS,
-				new Object[] { username, password }, getRowMapper(false));
+		Login res = null;
+		if (Validate.checkUser(username, password) == true) {
+			res = getJdbcTemplate().queryForObject(
+					SQLConstants.LOGIN_CREDENTIALS,
+					new Object[] { username, password }, getRowMapper(false));
+		} else {
+			res = null;
+		}
+		return res;
 	}
-
 }

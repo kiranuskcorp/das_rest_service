@@ -7,7 +7,7 @@ public class Hospital {
 	private int id;
 	private String name;
 	private String availableFacilities;
-	private int departmentId;
+	private String departmentId;
 	private String departmentName;
 	private String hospitalRegistrationNumber;
 	private Date hospitalEstablishmentDate;
@@ -45,11 +45,11 @@ public class Hospital {
 		this.availableFacilities = availableFacilities;
 	}
 
-	public int getDepartmentId() {
+	public String getDepartmentId() {
 		return departmentId;
 	}
 
-	public void setDepartmentId(int departmentId) {
+	public void setDepartmentId(String departmentId) {
 		this.departmentId = departmentId;
 	}
 

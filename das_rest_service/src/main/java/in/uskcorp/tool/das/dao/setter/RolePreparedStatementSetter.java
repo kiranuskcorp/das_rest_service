@@ -1,7 +1,6 @@
 package in.uskcorp.tool.das.dao.setter;
 
 import in.uskcorp.tool.das.domain.Role;
-import in.uskcorp.tool.das.domain.Specialization;
 import in.uskcorp.tool.das.util.ResultSetUtil;
 
 import java.sql.PreparedStatement;

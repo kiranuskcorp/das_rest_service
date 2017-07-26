@@ -1,7 +1,6 @@
 package in.uskcorp.tool.das.dao;
 
 import in.uskcorp.tool.das.dao.mapper.DoctorRowMapper;
-import in.uskcorp.tool.das.dao.mapper.HospitalRowMapper;
 import in.uskcorp.tool.das.dao.setter.DoctorPreparedStatementSetter;
 import in.uskcorp.tool.das.domain.Doctor;
 
@@ -31,27 +30,29 @@ public class DoctorDAOImpl extends DoctorDAO {
 
 	@Override
 	protected String getInsertQuery() {
-		return SQLConstants.DOCTOR_INSERT;
+		return SQLConstants.USER_INSERT;
 	}
 
 	@Override
 	protected String getUpdateQuery() {
-		return SQLConstants.DOCTOR_UPDATE;
+		return SQLConstants.USER_UPDATE;
 	}
 
 	@Override
 	protected String getDeleteQuery() {
-		return SQLConstants.DOCTOR_DELETE;
+		return SQLConstants.USER_DELETE;
 	}
 
 	@Override
-	protected PreparedStatementSetter getPreparedStatementSetter(Doctor a, boolean isInsert) {
+	protected PreparedStatementSetter getPreparedStatementSetter(Doctor a,
+			boolean isInsert) {
 		return new DoctorPreparedStatementSetter(a, isInsert);
 	}
 
 	@Override
 	public List<Doctor> readById(Integer id) {
-		return getJdbcTemplate().query(SQLConstants.DOCTOR_READ_BY_ID, new Object[] { id }, new DoctorRowMapper(false));
+		return getJdbcTemplate().query(SQLConstants.DOCTOR_READ_BY_ID,
+				new Object[] { id }, new DoctorRowMapper(false));
 	}
 
 }

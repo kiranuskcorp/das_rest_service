@@ -12,7 +12,17 @@ public class User {
 	private Date dob;
 	private String gender;
 	private String address;
-	private String role;
+	private int roleId;
+	private String roleName;
+	private String departmentName;
+	private String specializationName;
+	private String hospitalName;
+	private int hospitalId;
+	private int departmentId;
+	private int specializationId;
+	private float rating;
+	private int experience;
+	private String masterSlot;
 	private Date createdDate;
 	private Date updatedDate;
 	private String description;
@@ -89,12 +99,92 @@ public class User {
 		this.address = address;
 	}
 
-	public String getRole() {
-		return role;
+	public int getRoleId() {
+		return roleId;
 	}
 
-	public void setRole(String role) {
-		this.role = role;
+	public void setRoleId(int roleId) {
+		this.roleId = roleId;
+	}
+
+	public String getRoleName() {
+		return roleName;
+	}
+
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
+	}
+
+	public String getDepartmentName() {
+		return departmentName;
+	}
+
+	public void setDepartmentName(String departmentName) {
+		this.departmentName = departmentName;
+	}
+
+	public String getSpecializationName() {
+		return specializationName;
+	}
+
+	public void setSpecializationName(String specializationName) {
+		this.specializationName = specializationName;
+	}
+
+	public String getHospitalName() {
+		return hospitalName;
+	}
+
+	public void setHospitalName(String hospitalName) {
+		this.hospitalName = hospitalName;
+	}
+
+	public int getHospitalId() {
+		return hospitalId;
+	}
+
+	public void setHospitalId(int hospitalId) {
+		this.hospitalId = hospitalId;
+	}
+
+	public int getDepartmentId() {
+		return departmentId;
+	}
+
+	public void setDepartmentId(int departmentId) {
+		this.departmentId = departmentId;
+	}
+
+	public int getSpecializationId() {
+		return specializationId;
+	}
+
+	public void setSpecializationId(int specializationId) {
+		this.specializationId = specializationId;
+	}
+
+	public float getRating() {
+		return rating;
+	}
+
+	public void setRating(float rating) {
+		this.rating = rating;
+	}
+
+	public int getExperience() {
+		return experience;
+	}
+
+	public void setExperience(int experience) {
+		this.experience = experience;
+	}
+
+	public String getMasterSlot() {
+		return masterSlot;
+	}
+
+	public void setMasterSlot(String masterSlot) {
+		this.masterSlot = masterSlot;
 	}
 
 	public Date getCreatedDate() {

@@ -19,26 +19,28 @@ public class DoctorPreparedStatementSetter implements PreparedStatementSetter {
 		this.doctor = doctor;
 		this.isInsert = isInsert;
 	}
-
+	
 	@Override
 	public void setValues(PreparedStatement ps) throws SQLException {
-
 		ps.setString(1, doctor.getName());
 		ps.setString(2, doctor.getEmail());
-		ps.setString(3, doctor.getPhone());
-		ps.setString(4, doctor.getAlternatePhone());
-		ps.setDate(5, ResultSetUtil.converttoSQLDate(doctor.getDob()));
-		ps.setString(6, doctor.getGender());
-		ps.setInt(7, doctor.getDepartmentId());
-		ps.setInt(8, doctor.getSpecializationId());
-		ps.setInt(9, doctor.getHospitalId());
-		ps.setDate(10, ResultSetUtil.converttoSQLDate(new Date()));
-		ps.setFloat(11, doctor.getRating());
-		ps.setInt(12, doctor.getExperience());
-		ps.setInt(13, doctor.getMasterSlot());
-		ps.setString(14, doctor.getDescription());
+		ps.setString(3, ResultSetUtil.getGeneratedPassword());
+		ps.setString(4, doctor.getPhone());
+		ps.setString(5, doctor.getAlternatePhone());
+		ps.setDate(6, ResultSetUtil.converttoSQLDate(doctor.getDob()));
+		ps.setString(7, doctor.getGender());
+		ps.setString(8, doctor.getAddress());
+		ps.setInt(9, doctor.getRoleId());
+		ps.setInt(10, doctor.getDepartmentId());
+		ps.setInt(11, doctor.getSpecializationId());
+		ps.setInt(12, doctor.getHospitalId());
+		ps.setDate(13, ResultSetUtil.converttoSQLDate(new Date()));
+		ps.setFloat(14, doctor.getRating());
+		ps.setInt(15, doctor.getExperience());
+		ps.setString(16, doctor.getMasterSlot());
+		ps.setString(17, doctor.getDescription());
 		if (!isInsert) {
-			ps.setInt(15, doctor.getId());
+			ps.setInt(18, doctor.getId());
 		}
 	}
 }

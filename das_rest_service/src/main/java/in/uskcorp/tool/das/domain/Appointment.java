@@ -7,6 +7,7 @@ public class Appointment {
 	private int id;
 	private String patientName;
 	private String diseases;
+	private int diseasesId;
 	private Date appointmentDate;
 	private int doctorId;
 	private int hospitalId;
@@ -79,6 +80,14 @@ public class Appointment {
 
 	public void setDoctorId(int doctorId) {
 		this.doctorId = doctorId;
+	}
+
+	public int getDiseasesId() {
+		return diseasesId;
+	}
+
+	public void setDiseasesId(int diseasesId) {
+		this.diseasesId = diseasesId;
 	}
 
 	public int getHospitalId() {

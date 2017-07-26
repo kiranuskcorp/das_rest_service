@@ -24,5 +24,6 @@ public class ReportingPreparedStatementSetter implements PreparedStatementSetter
 		ps.setDate(1, ResultSetUtil.converttoSQLDate(reporting.getFromDate()));
 		ps.setDate(2, ResultSetUtil.converttoSQLDate(reporting.getToDate()));
 		ps.setInt(3, reporting.getDoctorId());
+		
 	}
 }

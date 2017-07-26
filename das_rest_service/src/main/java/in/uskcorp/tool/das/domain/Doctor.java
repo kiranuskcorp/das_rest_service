@@ -7,6 +7,7 @@ public class Doctor {
 	private int id;
 	private String name;
 	private String email;
+	private String password;
 	private String phone;
 	private String alternatePhone;
 	private String departmentName;
@@ -14,11 +15,14 @@ public class Doctor {
 	private String hospitalName;
 	private Date dob;
 	private String gender;
+	private String address;
+	private int roleId;
+	private String roleName;
 	private Date createdDate;
 	private Date updatedDate;
 	private float rating;
 	private int experience;
-	private int masterSlot;
+	private String masterSlot;
 	private String description;
 	private int hospitalId;
 	private int departmentId;
@@ -46,6 +50,14 @@ public class Doctor {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getPhone() {
@@ -104,6 +116,14 @@ public class Doctor {
 		this.gender = gender;
 	}
 
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 	public Date getCreatedDate() {
 		return createdDate;
 	}
@@ -136,11 +156,11 @@ public class Doctor {
 		this.experience = experience;
 	}
 
-	public int getMasterSlot() {
+	public String getMasterSlot() {
 		return masterSlot;
 	}
 
-	public void setMasterSlot(int masterSlot) {
+	public void setMasterSlot(String masterSlot) {
 		this.masterSlot = masterSlot;
 	}
 
@@ -174,6 +194,22 @@ public class Doctor {
 
 	public void setSpecializationId(int specializationId) {
 		this.specializationId = specializationId;
+	}
+
+	public int getRoleId() {
+		return 8;
+	}
+
+	public void setRoleId(int roleId) {
+		this.roleId = roleId;
+	}
+
+	public String getRoleName() {
+		return roleName;
+	}
+
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
 	}
 
 }

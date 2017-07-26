@@ -51,7 +51,8 @@ public class ReportingDAOImpl extends ReportingDAO {
 	}
 
 	@Override
-	protected PreparedStatementSetter getPreparedStatementSetter(Reporting a, boolean isInsert) {
+	protected PreparedStatementSetter getPreparedStatementSetter(Reporting a,
+			boolean isInsert) {
 		return new ReportingPreparedStatementSetter(a, isInsert);
 	}
 
@@ -65,9 +66,11 @@ public class ReportingDAOImpl extends ReportingDAO {
 			fromDate = from;
 			toDate = to;
 		}
+
 		String query = SQLConstants.REPORTING_BY_DOCTOR;
-		query += " WHERE d.id=a.doctor_id AND d.id=" + id + " AND a.appointment_date BETWEEN '" + fromDate + "' AND '"
-				+ toDate + "'";
+		query += " WHERE h.id = a.hospital_id AND d.id=a.doctor_id AND d.id="
+				+ id + " AND a.appointment_date BETWEEN '" + fromDate
+				+ "' AND '" + toDate + "'";
 		return jdbcTemplate.query(query, getRowMapper(true));
 	}
 }

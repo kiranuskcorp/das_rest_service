@@ -46,4 +46,13 @@ public class UserDaoImpl extends UserDAO {
 			boolean isInsert) {
 		return new UserPreparedStatementSetter(a, isInsert);
 	}
+
+	@Override
+	public int checkEmailExists(String email) {
+		int res = 0;
+		if (!Validate.checkEmail(email)) {
+			return res = 1;
+		}
+		return res;
+	}
 }

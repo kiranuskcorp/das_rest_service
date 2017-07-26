@@ -4,20 +4,18 @@ public class Login {
 
 	private String username;
 	private String password;
-	private boolean isValid;
+	private String role;
 
-	// private List<Role> role;
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
 
 	public String getUsername() {
 		return username;
-	}
-
-	public boolean isValid() {
-		return isValid;
-	}
-
-	public void setValid(boolean isValid) {
-		this.isValid = isValid;
 	}
 
 	public void setUsername(String username) {
@@ -32,14 +30,4 @@ public class Login {
 		this.password = password;
 	}
 
-	@Override
-	public String toString() {
-		return "Login [username=" + username + ", password=" + password + "]";
-	}
-
-	/*
-	 * public List<Role> getRole() { return role; }
-	 * 
-	 * public void setRole(List<Role> role) { this.role = role; }
-	 */
 }

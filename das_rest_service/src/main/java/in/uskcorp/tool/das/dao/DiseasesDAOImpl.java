@@ -1,12 +1,8 @@
 package in.uskcorp.tool.das.dao;
 
 import in.uskcorp.tool.das.dao.mapper.DiseasesRowMapper;
-import in.uskcorp.tool.das.dao.mapper.SpecializationRowMapper;
 import in.uskcorp.tool.das.dao.setter.DiseasesPreparedStatementSetter;
 import in.uskcorp.tool.das.domain.Diseases;
-import in.uskcorp.tool.das.domain.Specialization;
-
-import java.util.List;
 
 import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.jdbc.core.RowMapper;
@@ -50,7 +46,5 @@ public class DiseasesDAOImpl extends DiseasesDAO {
 			boolean isInsert) {
 		return new DiseasesPreparedStatementSetter(a, isInsert);
 	}
-
-	
 
 }

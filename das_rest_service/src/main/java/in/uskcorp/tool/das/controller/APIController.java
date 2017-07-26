@@ -12,10 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-/*
-@Author Kiran @ 03/07/2017
 
-*/
+/*
+ @Author Kiran @ 03/07/2017
+
+ */
 public abstract class APIController<T> {
 
 	@RequestMapping(value = DASRestURIConstants.READ_ALL, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -72,5 +73,6 @@ public abstract class APIController<T> {
 			return new ResponseEntity<String>(HttpStatus.SERVICE_UNAVAILABLE);
 		}
 	}
- 	protected abstract APIService<T> getService();
+
+	protected abstract APIService<T> getService();
 }
