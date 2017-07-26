@@ -32,13 +32,13 @@ public class DoctorRowMapper implements RowMapper<Doctor> {
 		doctor.setExperience(rs.getInt("experience"));
 		doctor.setMasterSlot(rs.getString("master_slot"));
 		doctor.setDescription(rs.getString("description"));
-		doctor.setSpecializationId(rs.getInt("specialization_id"));
+		doctor.setSpecializationId(rs.getString("specialization_id"));
 		doctor.setHospitalId(rs.getInt("hospital_id"));
 		doctor.setDepartmentId(rs.getInt("department_id"));
 
 		if (isReadAll) {
 			doctor.setDepartmentName(rs.getString("department_name"));
-			doctor.setSpecializationName(rs.getString("specializaiton_name"));
+			doctor.setSpecializationName(rs.getString("GROUP_CONCAT(sp.name)"));
 			doctor.setHospitalName(rs.getString("hospital_name"));
 		}
 		return doctor;

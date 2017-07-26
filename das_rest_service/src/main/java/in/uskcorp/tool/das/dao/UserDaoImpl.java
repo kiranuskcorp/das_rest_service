@@ -48,11 +48,9 @@ public class UserDaoImpl extends UserDAO {
 	}
 
 	@Override
-	public int checkEmailExists(String email) {
-		int res = 0;
-		if (!Validate.checkEmail(email)) {
-			return res = 1;
-		}
-		return res;
+	public User createUser(User user) {
+		return (User) getJdbcTemplate().query(SQLConstants.USER_INSERT,
+				new UserRowMapper());
 	}
+
 }

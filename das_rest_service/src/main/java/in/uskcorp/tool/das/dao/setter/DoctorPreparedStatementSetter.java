@@ -19,7 +19,7 @@ public class DoctorPreparedStatementSetter implements PreparedStatementSetter {
 		this.doctor = doctor;
 		this.isInsert = isInsert;
 	}
-	
+
 	@Override
 	public void setValues(PreparedStatement ps) throws SQLException {
 		ps.setString(1, doctor.getName());
@@ -32,7 +32,9 @@ public class DoctorPreparedStatementSetter implements PreparedStatementSetter {
 		ps.setString(8, doctor.getAddress());
 		ps.setInt(9, doctor.getRoleId());
 		ps.setInt(10, doctor.getDepartmentId());
-		ps.setInt(11, doctor.getSpecializationId());
+		ps.setString(11,
+				doctor.getSpecializationId().replace("[", "").replace("]", "")
+						.replace("\"", ""));
 		ps.setInt(12, doctor.getHospitalId());
 		ps.setDate(13, ResultSetUtil.converttoSQLDate(new Date()));
 		ps.setFloat(14, doctor.getRating());

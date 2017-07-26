@@ -26,7 +26,7 @@ public class Doctor {
 	private String description;
 	private int hospitalId;
 	private int departmentId;
-	private int specializationId;
+	private String specializationId;
 
 	public int getId() {
 		return id;
@@ -188,11 +188,11 @@ public class Doctor {
 		this.departmentId = departmentId;
 	}
 
-	public int getSpecializationId() {
+	public String getSpecializationId() {
 		return specializationId;
 	}
 
-	public void setSpecializationId(int specializationId) {
+	public void setSpecializationId(String specializationId) {
 		this.specializationId = specializationId;
 	}
 

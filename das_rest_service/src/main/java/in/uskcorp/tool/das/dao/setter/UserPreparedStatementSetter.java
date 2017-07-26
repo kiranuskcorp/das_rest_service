@@ -1,13 +1,14 @@
 package in.uskcorp.tool.das.dao.setter;
 
+import in.uskcorp.tool.das.dao.Validate;
+import in.uskcorp.tool.das.domain.User;
+import in.uskcorp.tool.das.util.ResultSetUtil;
+
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Date;
 
 import org.springframework.jdbc.core.PreparedStatementSetter;
-
-import in.uskcorp.tool.das.domain.User;
-import in.uskcorp.tool.das.util.ResultSetUtil;
 
 public class UserPreparedStatementSetter implements PreparedStatementSetter {
 	private User user;

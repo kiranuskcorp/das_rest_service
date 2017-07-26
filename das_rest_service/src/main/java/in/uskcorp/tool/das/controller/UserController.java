@@ -4,13 +4,18 @@ import in.uskcorp.tool.das.domain.User;
 import in.uskcorp.tool.das.service.APIService;
 import in.uskcorp.tool.das.service.UserService;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -25,9 +30,14 @@ public class UserController extends APIController<User> {
 		return userService;
 	}
 
-	@RequestMapping(value = "/checkEmail", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody int getDetails(@RequestParam String email) {
-		int login = userService.checkEmailExists(email);
-		return login;
+	@RequestMapping(value = DASRestURIConstants.CREATE, method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody ResponseEntity<String> create(@RequestBody User user) {
+		try {
+			User userCreate = userService.createUser(user);
+			return new ResponseEntity<String>("ok", HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return new ResponseEntity<String>(HttpStatus.SERVICE_UNAVAILABLE);
+		}
 	}
 }

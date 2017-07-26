@@ -4,5 +4,5 @@ import in.uskcorp.tool.das.domain.User;
 
 public abstract class UserService extends APIService<User> {
 
-	public abstract int checkEmailExists(String email);
+	public abstract User createUser(User user);
 }
