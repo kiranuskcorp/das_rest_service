@@ -30,4 +30,14 @@ public class Login {
 		this.password = password;
 	}
 
+	@Override
+	public String toString() {
+		return "Login [username=" + username + ", password=" + password
+				+ ", role=" + role + ", getRole()=" + getRole()
+				+ ", getUsername()=" + getUsername() + ", getPassword()="
+				+ getPassword() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + ", toString()="
+				+ super.toString() + "]";
+	}
+
 }

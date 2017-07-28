@@ -34,7 +34,7 @@ public class UserController extends APIController<User> {
 	public @ResponseBody ResponseEntity<String> create(@RequestBody User user) {
 		try {
 			User userCreate = userService.createUser(user);
-			return new ResponseEntity<String>(userCreate, HttpStatus.OK);
+			return new ResponseEntity<String>(HttpStatus.OK);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return new ResponseEntity<String>(HttpStatus.SERVICE_UNAVAILABLE);
